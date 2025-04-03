@@ -1,0 +1,21 @@
+body {
+    background-image: url(https://www.lasalle.edu/wp-content/uploads/2025/02/C-1400x600.png);
+}
+
+h1 {
+    color:white;
+    background-color: black;
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.card {
+   height: 75px;
+   margin-bottom: 5px;
+margin-left: 1%;
+}
+
+.contact {
+    margin-bottom: 1px;
+}
