@@ -5,12 +5,14 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-dark bg-dark">
 			<div className="container">
+				<div className="icon">
 				<Link to="/">
-					<span className="navbar-brand mb-1 h1">La Salle University</span>
+				<i className="fa-solid fa-building-columns fa-4x text-light"></i>
 				</Link>
-				<div className="ml-auto">
+				</div>
+				<div className="Add">
 					<Link to="/demo">
-						<button className="btn btn-light p-1 ">Add a new Student</button>
+					<Link to={`/create`} className="btn btn-primary m-1">Add a New student</Link>
 					</Link>
 				</div>
 			</div>
