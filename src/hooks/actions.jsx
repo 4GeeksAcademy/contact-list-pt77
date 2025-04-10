@@ -2,13 +2,16 @@ export const fetchAgenda = async (dispatch, payload) => {
     let response = await fetch("https://playground.4geeks.com/contact/agendas/moyunlimited") 
         let data = await response.json();
 
-        if(data.detail == `Agenda "moyunlimited" doesn't exist`) {
+        if(data.detail) {
             createAgenda();
         }
-        dispatch({
+        else {
+            dispatch({
             type: "set_agenda",
             payload: {agenda: data.slug, contacts: data.contacts},
         });
+        }
+        
 
 }
 
@@ -46,8 +49,7 @@ export const createContact = async (dispatch, payload) => {
     getContacts(dispatch);
 }
 export const updateContact = async (dispatch, payload) => {
-    let contactId= location.pathname.split("/")[2]
-    let response = await fetch("https://playground.4geeks.com/contact/agendas/moyunlimited/contacts/" + contactId, {
+    let response = await fetch("https://playground.4geeks.com/contact/agendas/moyunlimited/contacts/" + payload, {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({
@@ -60,7 +62,7 @@ export const updateContact = async (dispatch, payload) => {
     getContacts(dispatch);
 }
  export const deleteContact = async (dispatch, payload) => {
-    let deleteResponse = await fetch("https://playground.4geeks.com/contact/agendas/moyunlimited/contacts/+ payload.id", {
+    let deleteResponse = await fetch("https://playground.4geeks.com/contact/agendas/moyunlimited/contacts/" + payload, {
         method: "DELETE",
         headers: { "Content-type": "application/json" },
     })

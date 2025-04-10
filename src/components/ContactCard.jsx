@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 
 export const ContactCard = ({contact}) => {
 
-  const {store, dispatch} =useGlobalReducer()
-
+  const {store, dispatch, deleteContact } =useGlobalReducer()
+  const handleDelete = () => {
+    deleteContact(contact.id)
+  }
 	return (
 		<div className="text-center mb-1">
 			
@@ -18,7 +20,7 @@ export const ContactCard = ({contact}) => {
     <li><i className="fa-solid fa-envelope m-1"></i>{contact.email}</li>
     <Link to={`/create`} className="btn btn-primary m-1"><i className="fa-solid fa-plus"></i></Link>
     <Link to={`/update/${contact.id}`} className="btn btn-primary m-1"><i className="fa-solid fa-pen"></i></Link>
-    <Link to={`/delete`} className="btn btn-primary m-1"><i className="fa-solid fa-trash"></i></Link>
+    <button onClick={() => handleDelete()} className="btn btn-primary m-1"><i className="fa-solid fa-trash"></i></button>
   </div>
 </div>
     </div>
