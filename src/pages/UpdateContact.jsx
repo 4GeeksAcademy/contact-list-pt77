@@ -22,7 +22,7 @@ export const UpdateContact = () => {
 
   const handleUpdateContact = (e) => {
     e.preventDefault();
-    updateContact(currentContact);
+    updateContact({...currentContact,id:id});
     navigate("/")
   }
   return (

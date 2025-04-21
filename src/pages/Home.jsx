@@ -29,7 +29,7 @@ export const Home = () => {
                <ContactCard key={index} contact={contact} />
             ))
             
-          :<h1> you </h1>
+          :<h1> </h1>
       }
       </div>
     </div>

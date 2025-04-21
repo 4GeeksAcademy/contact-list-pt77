@@ -49,7 +49,7 @@ export const createContact = async (dispatch, payload) => {
     getContacts(dispatch);
 }
 export const updateContact = async (dispatch, payload) => {
-    let response = await fetch("https://playground.4geeks.com/contact/agendas/moyunlimited/contacts/" + payload, {
+    let response = await fetch("https://playground.4geeks.com/contact/agendas/moyunlimited/contacts/" + payload.id, {
         method: "PUT",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({
